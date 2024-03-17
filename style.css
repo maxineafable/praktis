@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(
+    hsl(223, 100%, 80%),
+    hsl(223, 100%, 60%)
+  );
+  background-attachment: fixed;
+}
+
+.container {
+  width: min(600px, 95%);
+  margin-inline: auto;
+}
+
+.todo-container {
+  margin-block: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.15);
+}
+
+.todo-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.todo-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.todo-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.todo-head button {
+  background-color: hsl(223, 100%, 60%);
+  width: 4rem;
+  aspect-ratio: 1;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todo-head button i {
+  color: #fff;
+  font-size: 1.125rem;
+  pointer-events: none;
+}
+
+.todo-head button:hover,
+.todo-head button:focus-visible {
+  opacity: 0.8;
+}
+
+.todo-head p {
+  font-size: 1.125rem;
+}
+
+.todo-body {
+  padding: 2rem;
+  background-color: hsl(0, 0%, 95%);
+}
+
+.tasks-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+}
+
+.checkbox {
+  width: 1.125rem;
+  aspect-ratio: 1;
+  appearance: none;
+  outline: none;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.checkbox:hover,
+.checkbox:focus-visible {
+  opacity: 0.8;
+}
+
+.checkbox:checked {
+  border: 2px solid hsl(348, 83%, 50%);
+  background-color: #fff;
+}
+
+.checkbox:checked ~ .todo-value {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.task .todo-value {
+  flex: 1;
+  outline: none;
+  border: none;
+  background: none;
+  color: black;
+}
+
+.task .todo-value:not(:disabled) {
+  border-bottom: 1px solid black;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.actions button {
+  cursor: pointer;
+}
+
+.actions button:hover,
+.actions button:focus-visible {
+  opacity: 0.8;
+}
+
+.actions button.edit {
+  color: hsl(223, 100%, 60%);
+}
+
+.actions button.delete {
+  color: hsl(348, 83%, 50%);
+}
+
+.msg {
+  text-align: center;
+  font-size: 1.125rem;
+}
